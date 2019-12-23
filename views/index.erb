@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Hangman</h1>
+        <p><%= guessed_word.join(" ") %></p>
+        <% if !game_over %>   
+            <form>
+                <input type='text' name='user_guess' maxlength='1'/>
+                <input type='submit' value='Guess!'/>
+            <form>
+            <p>Letters already guessed: <%= guessed_letters.join(" ")%></p>
+            <p>Incorrect guesses remaining: <%= number_of_guesses_remaining %></p>
+        <% end %>
+        <form>
+            <input type='submit' name='reset' value='Reset game'/>
+        <form>
+        <p><%= message %></p>
+    </body>
+</html>
