@@ -1,19 +1,32 @@
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+    </head>
     <body>
-        <h1>Hangman</h1>
-        <p><%= guessed_word.join(" ") %></p>
-        <% if !game_over %>   
+        <div id='header'><h1>Hangman</h1></div>
+        <div id='main-container'>
+            <div id='guessed-word'><p><%= guessed_word.join(" ") %></p></div>
+            <img src='images/stage_8.jpg'>
+            <% if !game_over %>   
+                <form>
+                    <div class='form'><input type='text' name='user_guess' maxlength='1'/></div>
+                    <div class='form'><input type='submit' value='Guess!'/></div>
+                <form>
+                <% if guessed_letters != [] %>
+                    <div class='info'><p>Incorrect letters: 
+                        <div class='info'><%= guessed_letters.join(" ")%></p></div>
+                    </div>
+                <% end %>
+                <div class='info'><p>Incorrect guesses remaining: <%= number_of_guesses_remaining %></p></div>
+            <% end %>
             <form>
-                <input type='text' name='user_guess' maxlength='1'/>
-                <input type='submit' value='Guess!'/>
+                <div id='reset'><input type='submit' name='reset' value='Reset game'/></div>
             <form>
-            <p>Letters already guessed: <%= guessed_letters.join(" ")%></p>
-            <p>Incorrect guesses remaining: <%= number_of_guesses_remaining %></p>
-        <% end %>
-        <form>
-            <input type='submit' name='reset' value='Reset game'/>
-        <form>
-        <p><%= message %></p>
+            <p><%= message %></p>
+        </div>
+        <div id='credit'>
+            <p>Made by Christian Arneson</p>
+        </div>
+        <script src="/script.js"></script>
     </body>
 </html>

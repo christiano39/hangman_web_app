@@ -1,0 +1,54 @@
+@import url("reset.css");
+
+body {
+    background-color: rgb(3, 232, 252);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    display: block;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    margin-top: 11px;
+}
+
+#main-container {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+#guessed-word {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 35px;
+}
+
+.form {
+    display: inline;
+}
+
+.info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#reset {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#credit {
+    font-size: 15px;
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
+    text-align: left;
+    margin-left: 5px;
+}
+
+#credit:hover {
+    color: darkgoldenrod;
+}

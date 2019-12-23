@@ -63,9 +63,10 @@ $guessed_word = secret_word_to_underscores($secret_word)
 $message = ""
 
 get '/' do
-    user_guess = params['user_guess'].downcase
+    user_guess = params['user_guess']
     game_over = false
-    if !user_guess.nil? && user_guess =~ /[a-z]/
+    if !user_guess.nil? && user_guess =~ /[A-Za-z]/
+        user_guess = user_guess.downcase
         if is_match?($secret_word, user_guess)
             indices = get_indices($secret_word, user_guess)
             indices.each do |i|
