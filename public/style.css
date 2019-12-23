@@ -1,8 +1,15 @@
 @import url("reset.css");
 
+html {
+    min-height: 100%;
+    min-width: 100%;
+}
+
 body {
-    background-color: rgb(3, 232, 252);
+    background-image: linear-gradient(rgb(29, 221, 247), rgb(19, 209, 216));
     font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    min-width: 100%;
 }
 
 div {
@@ -13,6 +20,7 @@ div {
 h1 {
     font-size: 40px;
     margin-top: 11px;
+    font-weight: bold;
 }
 
 #main-container {
@@ -41,8 +49,8 @@ h1 {
 }
 
 #credit {
-    font-size: 15px;
-    position: fixed;
+    font-size: 12px;
+    position: absolute;
     bottom: 5px;
     width: 100%;
     text-align: left;
@@ -51,15 +59,18 @@ h1 {
 }
 
 #credit:hover {
-    color: darkgoldenrod;
+    color: lightgoldenrodyellow;
 }
 
 #cheat {
-    background-color: rgb(3, 232, 252);
     color: dimgrey;
     visibility: hidden;
 }
 
 #click {
     margin: 0;
+}
+
+#letters {
+    font-weight: bold;
 }

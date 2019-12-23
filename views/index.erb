@@ -14,7 +14,7 @@
                 <form>
                 <% if guessed_letters != [] %>
                     <div class='info'><p>Incorrect letters: 
-                        <div class='info'><%= guessed_letters.join(" ")%></p></div>
+                        <div class='info' id='letters'><%= guessed_letters.join(" ")%></p></div>
                     </div>
                 <% end %>
             <% end %>
