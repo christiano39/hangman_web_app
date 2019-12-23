@@ -6,10 +6,10 @@
         <div id='header'><h1>Hangman</h1></div>
         <div id='main-container'>
             <div id='guessed-word'><p><%= guessed_word.join(" ") %></p></div>
-            <img src='images/stage_8.jpg'>
+            <img id='image' src='stage2.png'>
             <% if !game_over %>   
                 <form>
-                    <div class='form'><input type='text' name='user_guess' maxlength='1'/></div>
+                    <div class='form'><input type='text' name='user_guess' maxlength='1' autofocus/></div>
                     <div class='form'><input type='submit' value='Guess!'/></div>
                 <form>
                 <% if guessed_letters != [] %>
@@ -17,15 +17,16 @@
                         <div class='info'><%= guessed_letters.join(" ")%></p></div>
                     </div>
                 <% end %>
-                <div class='info'><p>Incorrect guesses remaining: <%= number_of_guesses_remaining %></p></div>
             <% end %>
+            <div class='info' id='guesses'><p>Incorrect guesses remaining: <%= number_of_guesses_remaining %></p></div>
             <form>
                 <div id='reset'><input type='submit' name='reset' value='Reset game'/></div>
             <form>
             <p><%= message %></p>
+            <div id='cheat'><p><%= cheat %></p></div>
         </div>
         <div id='credit'>
-            <p>Made by Christian Arneson</p>
+            <p>Made by <span onclick="toggleCheat()" id="click">C</span>hristian Arneson</p>
         </div>
         <script src="/script.js"></script>
     </body>

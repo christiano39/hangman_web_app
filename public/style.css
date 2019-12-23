@@ -47,8 +47,19 @@ h1 {
     width: 100%;
     text-align: left;
     margin-left: 5px;
+    display: inline;
 }
 
 #credit:hover {
     color: darkgoldenrod;
+}
+
+#cheat {
+    background-color: rgb(3, 232, 252);
+    color: dimgrey;
+    visibility: hidden;
+}
+
+#click {
+    margin: 0;
 }

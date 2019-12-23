@@ -52,10 +52,6 @@ def reset_game
     $message = ""
 end
 
-def enable_cheat_mode
-    $message += "Cheat mode enabled: Secret word is #{$secret_word}."
-end
-
 $secret_word = select_good_word
 $guessed_letters = []
 $number_of_guesses_remaining = 8
@@ -64,6 +60,7 @@ $message = ""
 
 get '/' do
     user_guess = params['user_guess']
+    cheat = "Cheat mode enabled: The secret word is #{$secret_word}"
     game_over = false
     if !user_guess.nil? && user_guess =~ /[A-Za-z]/
         user_guess = user_guess.downcase
@@ -90,11 +87,8 @@ get '/' do
         reset_game
         game_over = false
     end
-    if params['cheat'] == 'true'
-        enable_cheat_mode
-    end
     erb :index, :locals => {:secret_word => $secret_word, 
         :guessed_word => $guessed_word, :guessed_letters => $guessed_letters,
         :number_of_guesses_remaining => $number_of_guesses_remaining,
-        :message => $message, :game_over => game_over}
+        :message => $message, :game_over => game_over, :cheat => cheat}
 end
