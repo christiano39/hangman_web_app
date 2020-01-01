@@ -10,7 +10,7 @@
             <% if !game_over %>   
                 <form>
                     <div class='form'><input type='text' name='user_guess' maxlength='1' autofocus/></div>
-                    <div class='form'><input type='submit' value='Guess!'/></div>
+                    <div class='form'><input class='btn' type='submit' value='Guess!'/></div>
                 <form>
                 <% if guessed_letters != [] %>
                     <div class='info'><p>Incorrect letters: 
@@ -20,9 +20,9 @@
             <% end %>
             <div class='info' id='guesses'><p>Incorrect guesses remaining: <%= number_of_guesses_remaining %></p></div>
             <form>
-                <div id='reset'><input type='submit' name='reset' value='Reset game'/></div>
+                <div id='reset'><input class='btn' type='submit' name='reset' value='Reset game'/></div>
             <form>
-            <p><%= message %></p>
+            <p id='message'><%= message %></p>
             <div id='cheat'><p><%= cheat %></p></div>
         </div>
         <div id='credit'>

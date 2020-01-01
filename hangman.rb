@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/reloader'
 
 def select_random_word
     dictionary = File.readlines("dictionary.txt")
@@ -50,6 +49,7 @@ def reset_game
     $number_of_guesses_remaining = 8
     $guessed_word = secret_word_to_underscores($secret_word)
     $message = ""
+    $cheat = "Cheat mode enabled: The secret word is #{$secret_word}"
 end
 
 $secret_word = select_good_word
@@ -57,10 +57,10 @@ $guessed_letters = []
 $number_of_guesses_remaining = 8
 $guessed_word = secret_word_to_underscores($secret_word)
 $message = ""
+$cheat = "Cheat mode enabled: The secret word is #{$secret_word}"
 
 get '/' do
     user_guess = params['user_guess']
-    cheat = "Cheat mode enabled: The secret word is #{$secret_word}"
     game_over = false
     if !user_guess.nil? && user_guess =~ /[A-Za-z]/
         user_guess = user_guess.downcase
@@ -90,5 +90,5 @@ get '/' do
     erb :index, :locals => {:secret_word => $secret_word, 
         :guessed_word => $guessed_word, :guessed_letters => $guessed_letters,
         :number_of_guesses_remaining => $number_of_guesses_remaining,
-        :message => $message, :game_over => game_over, :cheat => cheat}
+        :message => $message, :game_over => game_over, :cheat => $cheat}
 end
