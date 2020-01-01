@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'sinatra'
 
 def select_random_word
